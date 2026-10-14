@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="800" height="800"><defs><linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset=".5" stop-color="#b9c3c9"/><stop offset="1" stop-color="#7d8a92"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a5a43"/><stop offset="1" stop-color="#08241b"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><circle cx="200" cy="200" r="150" fill="#6cff9c" opacity=".10"/><g stroke="#fff" stroke-opacity=".05" stroke-width="1"><path d="M40 0V400M0 40H400"/><path d="M80 0V400M0 80H400"/><path d="M120 0V400M0 120H400"/><path d="M160 0V400M0 160H400"/><path d="M200 0V400M0 200H400"/><path d="M240 0V400M0 240H400"/><path d="M280 0V400M0 280H400"/><path d="M320 0V400M0 320H400"/><path d="M360 0V400M0 360H400"/></g><g transform="translate(200 200) scale(1.1) translate(-200 -200)">
+<g fill="none" stroke-linecap="round">
+ <ellipse cx="190" cy="200" rx="140" ry="74" stroke="#0f3d2e" stroke-width="34" opacity=".3"/>
+ <ellipse cx="190" cy="200" rx="140" ry="74" stroke="#1f9d63" stroke-width="26"/>
+ <ellipse cx="190" cy="200" rx="140" ry="74" stroke="#6cff9c" stroke-width="3" stroke-dasharray="5 9"/>
+</g>
+<rect x="38" y="178" width="46" height="44" rx="8" fill="#6cff9c" stroke="#0f3d2e" stroke-width="3"/>
+<path d="M46 188 H78 M46 200 H78 M46 212 H78" stroke="#0f3d2e" stroke-width="3" stroke-dasharray="4 3"/>
+<circle cx="338" cy="200" r="24" fill="none" stroke="url(#st)" stroke-width="11"/>
+<g transform="translate(338 290) rotate(0) scale(0.3) translate(-200 -200)"><g fill="none" stroke-linejoin="round" stroke-linecap="round"><g stroke="#0f3d2e" stroke-width="31" opacity=".4"><rect x="130" y="60" width="140" height="280" rx="70"/></g><g stroke="url(#st)" stroke-width="22"><rect x="130" y="60" width="140" height="280" rx="70"/></g><g stroke="#fff" stroke-opacity=".38" stroke-width="5"><rect x="130" y="60" width="140" height="280" rx="70"/></g></g></g>
+</g></svg>

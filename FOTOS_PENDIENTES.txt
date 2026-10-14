@@ -1,0 +1,88 @@
+FOTOS REALES - ESTADO (carpeta static/img/productos/ para las que faltan)
+============================================================
+[x] foto real conectada   [ ] falta (se ve ilustracion)
+Para agregar: guarda <id>.jpg (o .png/.webp) en static/img/productos/ o pon la URL en IMAGENES_PRETECSI de app.py
+
+[x] ascendedor-de-pecho-yoke    Ascendedor de pecho Yoke
+[x] ascendedor-cam-clean    Ascendedor de pecho Cam Clean
+[x] jag-rescue-60    Kit de rescate JAG 60 m
+[x] jag-rescue-30    Kit de rescate JAG 30 m
+[x] kit-rescate-40    Kit de rescate Dinamik 40 m
+[x] kit-rescate-30    Kit de rescate Dinamik 30 m
+[x] kit-rescate-20    Kit de rescate Dinamik 20 m
+[x] kit-rescate-10    Kit de rescate Dinamik 10 m
+[x] descensor-antipanico-sir    Descensor con antipánico SIR
+[ ] accesorio-cuerda    Accesorios para cuerda
+[ ] mochila-equipo    Mochila para equipo vertical
+[ ] bolsa-cuerda    Bolsa para cuerda
+[x] arnes-multiproposito    Arnés multipropósito
+[x] arnes-arborismo    Arnés para arborismo
+[ ] ascendedor-mano    Ascendedor de mano
+[ ] retractil-anticaidas    Dispositivo retráctil anticaídas
+[ ] bloqueador-cuerda    Bloqueador para cuerda
+[ ] casco-altura    Casco para trabajo en alturas
+[ ] casco-arborismo    Casco para arborismo
+[ ] conector-acero    Conector de acero
+[ ] mosqueton-seguridad    Mosquetón de seguridad
+[ ] cuerda-semiestatica    Cuerda semiestática
+[ ] cuerda-arborismo    Cuerda para arborismo
+[ ] cordino-auxiliar    Cordino auxiliar
+[x] descensor-ocho    Descensor tipo ocho
+[x] descensor-acceso-cuerda    Descensor para acceso por cuerda
+[ ] eslinga-posicionamiento    Eslinga de posicionamiento
+[ ] eslinga-absorbedor    Eslinga con absorbedor de energía
+[x] linea-vida    Sistema de línea de vida
+[x] polea-simple    Polea simple
+[x] polea-doble    Polea doble
+[ ] guantes-proteccion    Guantes de protección
+[ ] proteccion-auditiva    Protección auditiva
+[ ] proteccion-facial    Protección facial
+[ ] proteccion-respiratoria    Protección respiratoria
+[ ] proteccion-visual    Protección visual
+[ ] proteccion-corporal    Protección corporal
+[ ] accesorio-herramientas    Accesorios para herramientas
+[ ] arnes-singing-rock-technic    Arnés Singing Rock Technic Standard
+[x] arnes-rescate    Arnés para rescate
+[x] arnes-confort    Arnés de cuerpo completo con acolchado
+[ ] ascendedor-pie    Ascendedor de pie
+[ ] retractil-cable    Retráctil anticaídas con cable
+[ ] retractil-cinta    Retráctil anticaídas con cinta
+[ ] retractil-rescate    Retráctil con función de rescate
+[ ] arrestador-cuerda    Arrestador para cuerda
+[ ] bloqueador-mecanico    Bloqueador mecánico de cuerda
+[ ] bloqueador-pecho    Bloqueador de pecho
+[ ] casco-vertex    Casco tipo Vertex para altura
+[ ] casco-ventilado    Casco ventilado para trabajo vertical
+[ ] lampara-casco    Iluminación para casco
+[ ] conector-ovalado    Conector ovalado
+[ ] conector-triple-cierre    Conector con cierre de seguridad
+[ ] conector-anclaje    Conector para punto de anclaje
+[ ] cuerda-11mm    Cuerda semiestática de 11 mm
+[ ] cuerda-dinamica    Cuerda dinámica
+[ ] cordino-prusik    Cordino para nudos auxiliares
+[x] descensor-id    Descensor autofrenante para cuerda
+[x] descensor-rescate    Descensor para rescate
+[ ] eslinga-doble    Eslinga doble de conexión
+[ ] eslinga-anclaje    Eslinga de anclaje
+[ ] eslinga-posicionamiento-ajustable    Eslinga ajustable de posicionamiento
+[ ] linea-vida-horizontal    Línea de vida horizontal
+[ ] linea-vida-vertical    Sistema de línea de vida vertical
+[ ] anclaje-estructural    Punto de anclaje estructural
+[x] polea-rescate    Polea para sistemas de rescate
+[x] polea-arborismo    Polea para arborismo
+[ ] guantes-cordex    Guantes para trabajo con cuerda
+[ ] guantes-industriales    Guantes de protección industrial
+[ ] guantes-agarre    Guantes con palma reforzada
+[ ] tapones-auditivos    Tapones de protección auditiva
+[ ] orejeras-auditivas    Orejeras de protección auditiva
+[ ] proteccion-facial-visera    Visera de protección facial
+[ ] careta-proteccion    Careta de protección industrial
+[ ] respirador-media-cara    Respirador de media cara
+[ ] mascarilla-desechable    Mascarilla de protección respiratoria
+[ ] gafas-seguridad    Gafas de seguridad
+[ ] gafas-antimpacto    Gafas de protección contra impactos
+[ ] ropa-alta-visibilidad    Prenda de alta visibilidad
+[ ] overol-proteccion    Ropa de protección laboral
+[ ] tripo-rescate    Trípode para espacios confinados
+[ ] anclaje-temporal    Sistema de anclaje temporal
+[ ] kit-rescate-confined    Kit de rescate para espacios confinados

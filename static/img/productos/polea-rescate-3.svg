@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="800" height="800"><defs><linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset=".5" stop-color="#b9c3c9"/><stop offset="1" stop-color="#7d8a92"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a5a43"/><stop offset="1" stop-color="#08241b"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><circle cx="200" cy="200" r="150" fill="#ddd0ff" opacity=".10"/><g stroke="#fff" stroke-opacity=".05" stroke-width="1"><path d="M40 0V400M0 40H400"/><path d="M80 0V400M0 80H400"/><path d="M120 0V400M0 120H400"/><path d="M160 0V400M0 160H400"/><path d="M200 0V400M0 200H400"/><path d="M240 0V400M0 240H400"/><path d="M280 0V400M0 280H400"/><path d="M320 0V400M0 320H400"/><path d="M360 0V400M0 360H400"/></g><g transform="translate(200 200) scale(1.1) translate(-200 -200)">
+<path d="M200 66 C262 66 286 130 286 210 C286 290 250 346 200 346 C150 346 114 290 114 210 C114 130 138 66 200 66Z" fill="url(#st)" stroke="#3b1d8a" stroke-width="4"/>
+<circle cx="200" cy="210" r="74" fill="#8b5cf6" stroke="#3b1d8a" stroke-width="5"/>
+<circle cx="200" cy="210" r="56" fill="none" stroke="#3b1d8a" stroke-width="3" opacity=".5"/>
+<circle cx="240.0" cy="210.0" r="9" fill="#3b1d8a" opacity=".85"/><circle cx="212.36208966731385" cy="248.04180252113838" r="9" fill="#3b1d8a" opacity=".85"/><circle cx="167.64106304713542" cy="233.513808693628" r="9" fill="#3b1d8a" opacity=".85"/><circle cx="167.63670632517272" cy="186.49218805339626" r="9" fill="#3b1d8a" opacity=".85"/><circle cx="212.35504003597327" cy="171.95590734805864" r="9" fill="#3b1d8a" opacity=".85"/>
+<circle cx="200" cy="210" r="16" fill="url(#st)" stroke="#3b1d8a" stroke-width="3"/>
+<circle cx="200" cy="96" r="16" fill="#fff" stroke="#3b1d8a" stroke-width="4"/>
+<path d="M120 20 V210 A80 80 0 0 0 280 210 V20" fill="none" stroke="#3b1d8a" stroke-width="16" stroke-linecap="round" opacity=".25"/>
+<path d="M120 20 V210 A80 80 0 0 0 280 210 V20" fill="none" stroke="#ddd0ff" stroke-width="10" stroke-linecap="round"/>
+</g></svg>

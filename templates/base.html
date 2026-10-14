@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}VerticalRope{% endblock %} | VerticalRope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('vr_theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+  <script>/* Llegada desde otra página: la capa de transición empieza visible y se desvanece en scripts.js */
+  try{var t=+sessionStorage.getItem('vr');sessionStorage.removeItem('vr');
+  if(t&&Date.now()-t<6000&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('vr-in')}}catch(e){}</script>
+</head>
+<body>
+{% from "_macros.html" import logo, redes with context %}
+
+{# ===== Barra superior en carrusel: horario y teléfono ===== #}
+{% set items %}
+  <span>🕒 Horario: {{ EMPRESA.horario }}</span>
+  <span>📞 Tel: {{ EMPRESA.telefono }}</span>
+  {% if EMPRESA.redes.values()|select|list %}<span class="rs-row">{{ redes(true) }}</span>{% endif %}
+{% endset %}
+<div class="top">
+  <div class="ticker" aria-label="Horario y teléfono">
+    <div class="ticker-track">
+      <div class="ticker-group">{{ items }}{{ items }}</div>
+      <div class="ticker-group" aria-hidden="true">{{ items }}{{ items }}</div>
+    </div>
+  </div>
+</div>
+
+<header class="hd"><div class="wrap hd-in">
+  <a href="{{ url_for('index') }}" class="brand">{{ logo('LogoBlanco.png', 40) }}</a>
+  <div class="act"><button type="button" id="theme" aria-label="Cambiar tema"><span class="moon">Oscuro</span><span class="sun">Claro</span></button><button type="button" id="cartbtn" aria-label="Abrir carrito">Carrito <b id="cc">0</b></button></div>
+  <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav id="nav" class="nav" aria-label="Principal">
+    <a href="{{ url_for('index') }}">Inicio</a>
+    <div class="mi sub"><a href="{{ url_for('productos') }}" class="tg">Productos</a><div class="mega cols">{% for col in CATS|batch(5, none) %}<div>{% for c in col if c %}<a href="{{ url_for('categoria', slug=c.slug) }}">{{ c.nombre }}</a>{% endfor %}</div>{% endfor %}</div></div>
+    <a href="{{ url_for('grupo', slug='arneses') }}">Arneses</a>
+    <a href="{{ url_for('grupo', slug='cuerdas') }}">Cuerdas</a>
+    <a href="{{ url_for('grupo', slug='cascos') }}">Cascos</a>
+    <a href="{{ url_for('grupo', slug='equipos-verticales') }}">Equipos verticales</a>
+    <div class="mi sub"><a href="#" class="tg">Servicios</a><div class="mega list"><b class="mh">Servicios</b>{% for s in SERVICIOS %}<a href="{{ url_for('servicio', slug=s.slug) }}">{{ s.nombre }}</a>{% endfor %}<b class="mh">Recursos</b>{% for r in RECURSOS %}<a href="{{ url_for('recurso', slug=r.slug) }}">{{ r.nombre }}</a>{% endfor %}</div></div>
+    <a href="{{ url_for('nosotros') }}">Nosotros</a><a href="{{ url_for('contacto') }}">Contacto</a>
+    <form class="search" action="{{ url_for('productos') }}" role="search"><input name="q" type="search" placeholder="Buscar productos" aria-label="Buscar productos"><button type="submit" aria-label="Buscar">Buscar</button></form>
+  </nav>
+</div></header>
+<main class="{% block mainclass %}{% endblock %}">{% block content %}{% endblock %}</main>
+<footer class="ft"><div class="wrap ft-in">
+  <div>{{ logo('LogoBlanco.png', 44) }}<p>VerticalRope: tu seguridad, nuestra prioridad.</p></div>
+  <div><h4>Acerca de nosotros</h4><p>Equipos para trabajo vertical, arborismo, rescate y protección personal.</p></div>
+  <div><h4>Links de interés</h4>{% for r in RECURSOS %}<a href="{{ url_for('recurso', slug=r.slug) }}">{{ r.nombre }}</a>{% endfor %}<a href="{{ url_for('nosotros') }}">Nosotros</a></div>
+  <div><h4>Información</h4><p>{{ EMPRESA.direccion or 'Dirección: consultar' }}<br>Tel.: {{ EMPRESA.telefono }}<br>Horario: {{ EMPRESA.horario }}</p>{% if EMPRESA.redes.values()|select|list %}<h4 class="ft-sg">Síguenos</h4><div class="rs-row ft-soc">{{ redes() }}</div>{% endif %}</div>
+</div><p class="copy">© VerticalRope. Todos los derechos reservados.</p></footer>
+<script type="application/json" id="vr-data">{{ CATALOGO|tojson }}</script>
+<div id="cv"></div>
+<aside id="cart" aria-label="Carrito" aria-hidden="true"><div class="ch"><h3>Carrito de cotización</h3><button type="button" id="cx" aria-label="Cerrar carrito">&times;</button></div><p id="ce">Tu carrito está vacío. Añade productos para solicitar una cotización.</p><ul id="cl"></ul><div class="cf"><a class="btn" href="{{ url_for('contacto', cart=1, asunto='Solicitud de cotización') }}">Solicitar cotización</a><button type="button" id="cclr" class="btn sec">Vaciar</button></div></aside>
+<a class="chat" href="{{ url_for('contacto') }}">Chatea con nosotros</a>
+
+<!-- ===== Transición: escalador descendiendo por un precipicio ===== -->
+<div id="vr-trans" aria-hidden="true">
+  <svg class="vr-bg" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="vrRk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d332d"/><stop offset=".55" stop-color="#1b211c"/><stop offset="1" stop-color="#0a0e0b"/></linearGradient>
+      <radialGradient id="vrVg" cx=".5" cy=".5" r=".78"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".72"/></radialGradient>
+    </defs>
+    <rect width="400" height="700" fill="url(#vrRk)"/>
+    <path d="M0 0H128L98 92 142 168 90 262 124 362 72 470 98 572 52 700H0Z" fill="#242a25"/>
+    <path d="M400 0H292L326 112 280 204 338 300 292 412 352 522 316 622 362 700H400Z" fill="#212720"/>
+    <path d="M128 0H292L326 112 262 150 196 118 142 168 98 92Z" fill="#2a302a"/>
+    <path d="M142 168 196 118 262 150 280 204 214 246 150 232 90 262Z" fill="#1e241f"/>
+    <path d="M90 262 150 232 214 246 280 204 338 300 262 340 190 322 124 362Z" fill="#272d27"/>
+    <path d="M124 362 190 322 262 340 338 300 292 412 214 430 152 420 72 470Z" fill="#1c221d"/>
+    <path d="M72 470 152 420 214 430 292 412 352 522 252 548 164 536 98 572Z" fill="#252b25"/>
+    <path d="M98 572 164 536 252 548 352 522 316 622 232 640 150 630 52 700 362 700 316 622Z" fill="#171c18"/>
+    <g fill="none" stroke="#4d574b" stroke-opacity=".5" stroke-width="1.3" stroke-linejoin="round">
+      <path d="M128 0 98 92 142 168 90 262 124 362 72 470 98 572 52 700"/>
+      <path d="M292 0 326 112 280 204 338 300 292 412 352 522 316 622 362 700"/>
+      <path d="M142 168 196 118 262 150 280 204"/><path d="M150 232 214 246 280 204"/><path d="M190 322 262 340 338 300"/><path d="M152 420 214 430 292 412"/><path d="M164 536 252 548 352 522"/>
+    </g>
+    <g fill="none" stroke="#070a08" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
+      <path d="M214 246 220 290 204 322 212 362 196 402 214 430"/>
+      <path d="M196 118 202 80 188 40 196 0"/>
+      <path d="M252 548 244 590 262 628 250 700"/>
+      <path d="M150 232 130 262 136 300"/>
+    </g>
+    <g fill="#3f6b4f" opacity=".28"><ellipse cx="104" cy="210" rx="22" ry="7"/><ellipse cx="318" cy="352" rx="26" ry="8"/><ellipse cx="86" cy="500" rx="18" ry="6"/><ellipse cx="338" cy="590" rx="20" ry="6"/></g>
+    <rect width="400" height="700" fill="url(#vrVg)"/>
+  </svg>
+
+  <svg class="vr-fig" viewBox="0 0 300 700" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+    <defs>
+      <linearGradient id="vrJk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a8f6a"/><stop offset="1" stop-color="#14543f"/></linearGradient>
+      <linearGradient id="vrHm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9dffbf"/><stop offset="1" stop-color="#3fd77a"/></linearGradient>
+    </defs>
+    <g class="sway">
+      <!-- Cuerda (tramo anclado + funda con patrón) -->
+      <line x1="150" y1="-3000" x2="150" y2="3000" stroke="#e8efe9" stroke-width="4.5"/>
+      <line x1="150" y1="-3000" x2="150" y2="3000" stroke="#6cff9c" stroke-width="4.5" stroke-dasharray="2 7" opacity=".75"/>
+      <g class="cl"><g transform="translate(150 0) scale(2.1)">
+        <!-- mochila -->
+        <path d="M-40 -36Q-48 -18 -40 0L-27 -2 -25 -38Z" fill="#141b17" stroke="#6cff9c" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M-37 -26H-27M-37 -14H-27" stroke="#6cff9c" stroke-width="1.2" opacity=".7"/>
+        <!-- pierna lejana -->
+        <g class="legB"><path d="M-2 12 24 24 48 34" stroke="#26352d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M44 28 56 26 62 32 62 52Q62 56 57 56L46 54Q43 46 44 40Z" fill="#10150f"/><path d="M62 33 62 52" stroke="#6cff9c" stroke-width="2" stroke-linecap="round"/></g>
+        <!-- brazo guía lejano -->
+        <path d="M-6 -38 6 -50 2 -68" stroke="#14543f" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- torso -->
+        <path d="M-30 -42C-22 -52 -6 -52 0 -44L8 -8C9 2 5 11 -1 13L-16 13C-22 5 -29 -16 -30 -42Z" fill="url(#vrJk)" stroke="#0a2a20" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M-27 -28 4 -26M-24 -20 6 -18" stroke="#e6eee8" stroke-width="2" opacity=".85"/>
+        <path d="M-6 -44 4 -10" stroke="#6cff9c" stroke-width="1.5" opacity=".8"/>
+        <!-- arnés -->
+        <path d="M-27 -40-12 8M-4 -44-4 6" stroke="#161d19" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M-17 2Q-4 10 11 3L11 13Q-4 20 -17 13Z" fill="#161d19" stroke="#6cff9c" stroke-width=".9" stroke-linejoin="round"/>
+        <rect x="3" y="5" width="6" height="7" rx="1.2" fill="#cfd6d1"/>
+        <!-- material en la cintura -->
+        <g fill="none" stroke="#6cff9c" stroke-width="1.8"><ellipse cx="-12" cy="17" rx="2.6" ry="4.2"/><ellipse cx="-6" cy="19" rx="2.6" ry="4.2"/></g>
+        <!-- pierna cercana -->
+        <g class="legA"><path d="M-2 10 28 8 52 14" stroke="#33463b" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <rect x="14" y="0.5" width="6" height="15" rx="2.4" fill="#161d19" stroke="#6cff9c" stroke-width=".9" transform="rotate(8 17 8)"/>
+          <path d="M47 4 60 3 67 9 68 31Q68 36 62 36L50 34Q46 26 47 18Z" fill="#12171a"/><path d="M68 10 68 32" stroke="#6cff9c" stroke-width="2.6" stroke-linecap="round"/><path d="M49 12 60 11" stroke="#6cff9c" stroke-width="1.4" opacity=".8"/></g>
+        <!-- descensor y mosquetón -->
+        <rect x="-3" y="6" width="9" height="14" rx="4.5" fill="none" stroke="#6cff9c" stroke-width="2"/>
+        <circle cx="1" cy="21" r="4.6" fill="none" stroke="#cfd6d1" stroke-width="2.8"/><circle cx="1" cy="30" r="6.6" fill="none" stroke="#cfd6d1" stroke-width="2.8"/>
+        <!-- cuello y cabeza -->
+        <path d="M-24 -50-14 -50-14 -44-24 -44Z" fill="#c9966c"/>
+        <circle cx="-20" cy="-60" r="9.5" fill="#d9a77f"/>
+        <path d="M-12 -57-8 -56-12 -54" stroke="#b5835c" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="-14.5" cy="-61" r="1.1" fill="#202522"/>
+        <path d="M-20 -52Q-14 -49 -10 -53" stroke="#202522" stroke-width=".9" fill="none" opacity=".7"/>
+        <!-- casco -->
+        <path d="M-34 -60C-35 -76 -20 -83 -10 -75 -5 -71 -5 -64 -6 -60L-10 -58 -33 -58Z" fill="url(#vrHm)" stroke="#0f3d2e" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M-30 -71Q-20 -80 -8 -70" stroke="#0f3d2e" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M-27 -66 -24 -62M-21 -69 -18 -64M-15 -68-12 -63" stroke="#0f3d2e" stroke-width="1.3" stroke-linecap="round" opacity=".75"/>
+        <path d="M-8 -62 1 -60 -7 -57Z" fill="#0f3d2e"/>
+        <circle cx="-5" cy="-66" r="2.8" fill="#fff" stroke="#0f3d2e" stroke-width="1"/>
+        <path d="M-27 -57 -19 -49 -12 -52" stroke="#161d19" stroke-width="1.3" fill="none"/>
+        <!-- brazo de freno (cercano) -->
+        <g class="armB"><path d="M-12 -38 -6 -4 2 32" stroke="#1c6e52" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M-14 -36 -8 -4" stroke="#6cff9c" stroke-width="1" opacity=".7" fill="none"/>
+          <path d="M-3 38C-3 33 0 30 4 31 8 32 9 38 7 43 4 47-2 46-3 38Z" fill="#161d19" stroke="#6cff9c" stroke-width="1.1"/></g>
+        <!-- brazo guía (cercano) -->
+        <g class="armG"><path d="M-8 -40 4 -52 1 -68" stroke="#1c6e52" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M-5 -71C-5 -77 -1 -80 3 -79 7 -78 8 -72 6 -68 3 -65-4 -66-5 -71Z" fill="#161d19" stroke="#6cff9c" stroke-width="1.1"/></g>
+      </g></g>
+    </g>
+  </svg>
+  <div class="vr-logo-box"><img class="vr-logo" src="{{ url_for('static', filename='img/LogoBlanco.png') }}" alt="" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="wordmark" hidden>VerticalRope</span></div>
+</div>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body></html>

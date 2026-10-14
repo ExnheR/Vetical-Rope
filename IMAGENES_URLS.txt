@@ -1,0 +1,28 @@
+URL DE IMÁGENES REMOTAS USADAS EN VERTICALROPE
+============================================================
+Estado de verificación (sinceridad ante todo):
+  - PROPORCIONADA POR EL USUARIO: la URL la entregaste tú en el brief.
+  - NO VERIFICADA: la URL viene de la versión anterior del proyecto (imágenes de categoría/línea
+    de Pretecsi). En el entorno donde se terminó el proyecto no había acceso a internet, así que
+    NO pude comprobar que carguen. Ábrelas en el navegador; si alguna falla, la web muestra el
+    fondo de respaldo (no se rompe). Reemplázala en app.py (constante W / campo img del producto).
+  - Varias son imágenes ilustrativas de la categoría, no la foto exacta de cada referencia.
+
+[PROPORCIONADA POR EL USUARIO] https://pretecsi.com/wp-content/uploads/2026/08/ascendedor-pecho-para-cuerda-de-8-13-mm-n-5306-yoke.jpg
+    usada en: producto: ascendedor-de-pecho-yoke
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/01/arborismo.webp
+    usada en: producto: ascendedor-cam-clean; producto: accesorio-cuerda; producto: mochila-equipo; producto: bolsa-cuerda; producto: ascendedor-mano; producto: cuerda-semiestatica (+10 más)
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/01/proteccion_personal.webp
+    usada en: producto: guantes-proteccion; producto: proteccion-auditiva; producto: proteccion-facial; producto: proteccion-respiratoria; producto: proteccion-visual; producto: proteccion-corporal (+14 más)
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/01/rescateyemergencias.webp
+    usada en: producto: jag-rescue-60; producto: jag-rescue-30; producto: kit-rescate-40; producto: kit-rescate-30; producto: kit-rescate-20; producto: kit-rescate-10 (+12 más)
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/01/sistemas_ingenieria.webp
+    usada en: línea: sistemas-de-ingenieria
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/01/trabajo_altura.webp
+    usada en: producto: retractil-anticaidas; producto: bloqueador-cuerda; producto: conector-acero; producto: mosqueton-seguridad; producto: eslinga-posicionamiento; producto: eslinga-absorbedor (+14 más)
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/03/buid.webp
+    usada en: producto: linea-vida; producto: linea-vida-horizontal; producto: linea-vida-vertical; producto: anclaje-estructural; servicio: lineas-de-vida
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/03/casco.webp
+    usada en: producto: arnes-multiproposito; producto: arnes-arborismo; producto: casco-altura; producto: casco-arborismo; producto: arnes-singing-rock-technic; producto: arnes-rescate (+5 más)
+[NO VERIFICADA] https://pretecsi.com/wp-content/uploads/2026/03/luz.webp
+    usada en: servicio: inspeccion-de-equipos

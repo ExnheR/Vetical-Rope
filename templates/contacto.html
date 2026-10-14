@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+{% block content %}
+<section class="sec"><div class="wrap narrow"><span class="tag dk">Estamos para ayudarte</span><h1>Contáctanos</h1><p>Completa el formulario con tu consulta. Esta versión valida los datos, pero todavía no envía correos automáticamente.</p>
+{% if valido %}<div class="alert" role="status"><strong>Formulario validado.</strong> Tus datos pasaron la validación, pero el mensaje no se envió porque aún falta configurar un servicio de correo.</div>{% endif %}
+<form method="post" id="cf" novalidate>
+<label>Nombre<input name="nombre" type="text" value="{{ f.nombre }}" required><span class="err" data-for="nombre">{{ errores.get('nombre','') }}</span></label>
+<label>Correo electrónico<input name="correo" type="email" value="{{ f.correo }}" required><span class="err" data-for="correo">{{ errores.get('correo','') }}</span></label>
+<label>Teléfono (opcional)<input name="telefono" type="tel" value="{{ f.telefono }}"><span class="err" data-for="telefono">{{ errores.get('telefono','') }}</span></label>
+<label>Asunto<input name="asunto" type="text" value="{{ f.asunto }}" required><span class="err" data-for="asunto">{{ errores.get('asunto','') }}</span></label>
+<label>Mensaje<textarea name="mensaje" rows="5" required>{{ f.mensaje }}</textarea><span class="err" data-for="mensaje">{{ errores.get('mensaje','') }}</span></label>
+<button class="btn" type="submit">Validar mensaje</button></form></div></section>
+{% endblock %}

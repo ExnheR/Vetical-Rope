@@ -1,0 +1,44 @@
+VERTICALROPE - PROYECTO FLASK (sin base de datos)
+==================================================
+
+ANTES DE EJECUTAR: COPIA TUS LOGOS
+  Copia LogoBlanco.png y LogoOscuro.png dentro de  static\img\
+  (sin ellos la web funciona y muestra el texto "VerticalRope" como respaldo).
+
+REQUISITOS
+  Python 3.10 o superior (https://www.python.org/downloads/ ; marca "Add Python to PATH").
+
+COMANDOS (CMD de Windows, dentro de la carpeta VerticalRope)
+  python -m venv venv
+  venv\Scripts\activate
+  python -m pip install -r requirements.txt
+  python app.py
+
+  Abre http://127.0.0.1:5000/
+  (En VS Code: Ctrl+Shift+P > "Python: Select Interpreter" > el de la carpeta venv.)
+  Si "activate" da error de permisos en PowerShell, usa CMD o:
+  Set-ExecutionPolicy -Scope Process Bypass
+
+QUÉ INCLUYE
+  - Inicio, Catálogo (buscador + filtros por grupo con JavaScript), Grupos
+    (Arneses, Cuerdas, Cascos, Equipos verticales, Accesorios, Protección personal),
+    Categorías, Detalle de producto, Servicios, Recursos, Nosotros y Contacto.
+  - Transición entre páginas con escalador SVG descendiendo por un precipicio (~1 s),
+    respetando prefers-reduced-motion. Ver static/js/scripts.js y #vr-trans en templates/base.html.
+  - Carrito de cotización guardado en el navegador (localStorage) y modo claro/oscuro.
+  - Productos definidos en una lista Python en app.py. Sin SQL ni base de datos.
+
+IMPORTANTE (honestidad de datos)
+  - No hay precios, existencias ni certificaciones inventados: aparecen como "Consultar".
+  - Imágenes: lista y estado de verificación en IMAGENES_URLS.txt. Casi todas NO se pudieron
+    verificar sin internet; la web usa un fondo de respaldo si una imagen no carga.
+  - Formulario de contacto: valida en el navegador y en Flask, pero NO envía correos.
+    Al validar muestra un aviso claro. En app.py (función contacto) hay instrucciones para
+    conectar Flask-Mail o smtplib. Mientras tanto, no afirmes a tus clientes que se envió.
+  - Datos de empresa (teléfono, correo, redes) en EMPRESA dentro de app.py: complétalos.
+
+IMÁGENES DE PRODUCTO (actualizado)
+  - Cada producto tiene 3 ilustraciones propias en static/img/productos/ (<id>.svg, <id>-2.svg, <id>-3.svg).
+  - Para usar FOTOS REALES, copia tus archivos con el mismo nombre (jpg, png o webp), p. ej. casco-altura.jpg.
+    Si existe la foto, se usa en lugar de la ilustración. No hace falta tocar app.py.
+  - Los links de redes, horario y teléfono se editan en app.py, dentro de EMPRESA.

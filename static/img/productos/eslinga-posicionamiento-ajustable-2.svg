@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="800" height="800"><defs><linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset=".5" stop-color="#b9c3c9"/><stop offset="1" stop-color="#7d8a92"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf1"/><stop offset="1" stop-color="#fffadb"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><ellipse cx="200" cy="384" rx="110" ry="9" fill="#000" opacity=".10"/><g transform="translate(200 200) rotate(-8) scale(.94) translate(-200 -200)">
+<g fill="none" stroke-linecap="round">
+ <path d="M100 300 C90 110 310 110 300 300" stroke="#2a2a2a" stroke-width="22" opacity=".35"/>
+ <path d="M100 300 C90 110 310 110 300 300" stroke="#f5c400" stroke-width="15"/>
+ <path d="M100 300 C90 110 310 110 300 300" stroke="#fff3b0" stroke-width="3" stroke-dasharray="3 8"/>
+ <path d="M200 142 V232" stroke="#f5c400" stroke-width="13"/>
+</g>
+<rect x="176" y="118" width="48" height="40" rx="8" fill="url(#st)" stroke="#2a2a2a" stroke-width="3"/>
+<path d="M186 130 H214 M186 146 H214" stroke="#2a2a2a" stroke-width="3"/>
+<circle cx="200" cy="238" r="9" fill="#fff3b0" stroke="#2a2a2a"/>
+<g transform="translate(100 330) rotate(6) scale(0.28) translate(-200 -200)"><g fill="none" stroke-linejoin="round" stroke-linecap="round"><g stroke="#2a2a2a" stroke-width="31" opacity=".4"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="url(#st)" stroke-width="22"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="#fff" stroke-opacity=".38" stroke-width="5"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g></g></g>
+<g transform="translate(300 330) rotate(-6) scale(0.28) translate(-200 -200)"><g fill="none" stroke-linejoin="round" stroke-linecap="round"><g stroke="#2a2a2a" stroke-width="31" opacity=".4"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="url(#st)" stroke-width="22"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="#fff" stroke-opacity=".38" stroke-width="5"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g></g></g>
+</g></svg>

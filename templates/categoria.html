@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% from "_macros.html" import card with context %}
+{% block title %}{{ c.nombre }}{% endblock %}
+{% block content %}
+<section class="sec"><div class="wrap"><span class="tag dk">{{ tipo|default('Catálogo')|capitalize }}</span><h1>{{ c.nombre }}</h1><p>Consulta los productos disponibles en esta sección. Las referencias, imágenes, precios y existencias se confirman bajo solicitud.</p>
+{% if productos %}<div class="grid prods">{% for p in productos %}{{ card(p) }}{% endfor %}</div>{% else %}<div class="srv"><h2>Estamos ampliando esta sección</h2><p>Por ahora no hay referencias asignadas a esta sección. Podemos orientarte sobre el equipo que necesitas y confirmar disponibilidad.</p><a class="btn" href="{{ url_for('contacto', asunto='Consulta sobre ' ~ c.nombre) }}">Consultar disponibilidad</a></div>{% endif %}
+<p><a href="{{ url_for('productos') }}">← Volver al catálogo</a></p></div></section>
+{% endblock %}

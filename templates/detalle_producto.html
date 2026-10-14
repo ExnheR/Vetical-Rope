@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% from "_macros.html" import card with context %}
+{% block title %}{{ p.nombre }}{% endblock %}
+{% block content %}
+<section class="sec"><div class="wrap detail"><div class="gal"><div class="dimg">{% if p.img %}<img id="gm" src="{{ p.img }}" alt="{{ p.nombre }}" onerror="this.onerror=null;this.src='{{ p.fb }}'">{% else %}<span class="noimg">Imagen pendiente</span>{% endif %}</div>{% if p.imgs|length > 1 %}<div class="thumbs" role="group" aria-label="Vistas del producto">{% for im in p.imgs %}<button type="button" class="th{{ ' on' if loop.first else '' }}" data-src="{{ im }}" aria-label="Ver imagen {{ loop.index }} de {{ p.imgs|length }}"><img src="{{ im }}" alt="" loading="lazy" onerror="this.closest('button').remove()"></button>{% endfor %}</div>{% endif %}</div><div><small><a href="{{ url_for('categoria', slug=p.cat) }}">{{ CAT[p.cat].nombre }}</a></small><h1>{{ p.nombre }}</h1><p>{{ p.desc }}</p>{% if p.lista %}<h3>Características por consultar</h3><ul>{% for i in p.lista %}<li>{{ i }}</li>{% endfor %}</ul>{% endif %}<p class="note">Precio, existencias, certificaciones y condiciones comerciales: consultar. No utilices un equipo sin revisar la ficha del fabricante y recibir la formación necesaria.</p><div class="acts"><button type="button" class="btn add" data-id="{{ p.id }}">Añadir al carrito</button><a class="btn sec" href="{{ url_for('contacto', asunto='Consulta: ' ~ p.nombre) }}">Consultar este producto</a>{% if p.ficha %}<a class="btn sec" href="{{ p.ficha }}" target="_blank" rel="noopener">Ficha técnica</a>{% endif %}</div></div></div></section>
+{% if relacionados %}<section class="sec alt"><div class="wrap"><h2>Productos relacionados</h2><div class="grid prods">{% for producto in relacionados %}{{ card(producto) }}{% endfor %}</div></div></section>{% endif %}
+
+<script>
+(function(){var g=document.getElementById('gm');if(!g)return;
+document.querySelectorAll('.thumbs .th').forEach(function(b){b.addEventListener('click',function(){
+g.src=b.dataset.src;document.querySelectorAll('.thumbs .th').forEach(function(x){x.classList.toggle('on',x===b)});});});})();
+</script>
+{% endblock %}

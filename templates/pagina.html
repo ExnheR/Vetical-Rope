@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ t }}{% endblock %}
+{% block content %}
+<section class="sec"><div class="wrap narrow"><span class="tag dk">{% if tipo == 'servicio' %}Servicio{% elif tipo == 'recurso' %}Centro de recursos{% else %}VerticalRope{% endif %}</span><h1>{{ t }}</h1><p>{{ resumen or 'Explora la información de esta sección y contáctanos si necesitas orientación.' }}</p>
+{% if lista %}<h2>Información importante</h2><ul>{% for i in lista %}<li>{{ i }}</li>{% endfor %}</ul>{% endif %}
+{% if tipo == 'servicio' %}<h2>¿Cómo solicitar información?</h2><p>Cuéntanos qué trabajo necesitas realizar, dónde se desarrollará y qué equipos o solución estás buscando. La viabilidad técnica debe ser evaluada por personal competente.</p><a class="btn" href="{{ url_for('contacto', asunto='Consulta de servicio: ' ~ t) }}">Solicitar información</a>
+{% elif tipo == 'recurso' %}<h2>Solicita documentación</h2><p>Podemos ayudarte a identificar la documentación relacionada con una marca, referencia o necesidad específica. La disponibilidad de archivos debe confirmarse.</p><a class="btn" href="{{ url_for('contacto', asunto='Solicitud de recurso: ' ~ t) }}">Solicitar información</a>
+{% else %}<a class="btn" href="{{ url_for('index') }}">Volver al inicio</a>{% endif %}
+</div></section>
+{% endblock %}

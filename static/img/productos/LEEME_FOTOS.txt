@@ -1,0 +1,7 @@
+PRODUCTOS - SVG actualizados
+
+Se conservaron los nombres y las rutas de los archivos SVG. Su contenido ahora muestra fotografías de producto enlazadas desde el catálogo de Verticalmente SAS.
+
+IMPORTANTE: las fotografías se cargan desde Internet (no están incrustadas en los SVG), por lo que se requiere conexión y el proveedor puede cambiar o retirar las imágenes. La fuente consultada ofrece fotos reales de mosquetones, poleas, descendedores, ascendedores y equipos de rescate. Para categorías que no estaban representadas en esa página, se asignó una foto representativa disponible; por eso algunas imágenes pueden no coincidir exactamente con el producto indicado en el nombre. Revise esas asignaciones antes de publicar la tienda.
+
+Fuente: https://verticalmente.com.co/productos/ferreteria/

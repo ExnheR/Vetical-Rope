@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="800" height="800"><defs><linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset=".5" stop-color="#b9c3c9"/><stop offset="1" stop-color="#7d8a92"/></linearGradient><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7faf8"/><stop offset="1" stop-color="#dbe6e0"/></linearGradient></defs><rect width="400" height="400" fill="url(#bg)"/><ellipse cx="200" cy="384" rx="110" ry="9" fill="#000" opacity=".10"/><g>
+
+<path d="M138 156 Q200 74 262 156" fill="none" stroke="#2a2a2a" stroke-width="16" stroke-linecap="round"/>
+<rect x="64" y="150" width="272" height="160" rx="42" fill="#f5c400" stroke="#2a2a2a" stroke-width="5"/>
+<path d="M84 192 H316" stroke="#2a2a2a" stroke-width="4" stroke-dasharray="6 5"/>
+<rect x="104" y="212" width="20" height="82" fill="#e6eee8" opacity=".92"/>
+<rect x="276" y="212" width="20" height="82" fill="#e6eee8" opacity=".92"/>
+<path d="M186 246 h28 v-28 h28 v28 h28 v28 h-28 v28 h-28 v-28 h-28z" fill="#fff" transform="translate(-28 -4) scale(1)" opacity=".95"/>
+<path d="M336 232 C366 250 372 290 350 330" fill="none" stroke="#fff3b0" stroke-width="12" stroke-linecap="round"/>
+<g transform="translate(336 214) rotate(20) scale(0.22) translate(-200 -200)"><g fill="none" stroke-linejoin="round" stroke-linecap="round"><g stroke="#2a2a2a" stroke-width="31" opacity=".4"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="url(#st)" stroke-width="22"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g><g stroke="#fff" stroke-opacity=".38" stroke-width="5"><path d="M135 70 H205 C285 70 300 200 275 330 H135 Z"/></g></g></g>
+</g></svg>

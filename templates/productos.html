@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% from "_macros.html" import card with context %}
+{% block title %}Productos{% endblock %}
+{% block content %}
+<section class="sec"><div class="wrap"><span class="tag dk">Catálogo</span><h1>Productos de seguridad y trabajo vertical</h1><p>Explora las categorías y consulta cada referencia. Los precios, existencias y certificaciones se confirman bajo solicitud.</p>
+<form class="filters" id="ff" action="{{ url_for('productos') }}" method="get"><input id="q" name="q" type="search" value="{{ q }}" placeholder="Buscar por nombre o descripción" aria-label="Buscar productos"><input type="hidden" name="grupo" id="g" value="{{ grupo }}"><button class="btn" type="submit">Buscar</button>
+<div class="chips" role="group" aria-label="Filtrar por categoría"><a class="chip{{ ' on' if not grupo else '' }}" data-grupo="" href="{{ url_for('productos', q=q) }}">Todos</a>{% for g in GRUPOS %}<a class="chip{{ ' on' if grupo==g.slug else '' }}" data-grupo="{{ g.slug }}" href="{{ url_for('productos', q=q, grupo=g.slug) }}">{{ g.nombre }}</a>{% endfor %}</div></form>
+<div class="grid prods" id="list" data-initial-cat="{{ cat }}" data-initial-grupo="{{ grupo }}">{% for p in productos %}{{ card(p) }}{% endfor %}</div>
+<p class="center" id="empty"{% if productos %} hidden{% endif %}>No encontramos productos para esta búsqueda. <a href="{{ url_for('productos') }}">Ver catálogo completo</a> o <a href="{{ url_for('contacto') }}">consultarnos</a>.</p></div></section>
+{% endblock %}
